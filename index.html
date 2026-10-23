@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Supplies</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f8f0;
+            margin: 0;
+            padding: 16px;
+            color: #14251e;
+        }
+
+        .container {
+            max-width: 1500px;
+            margin: auto;
+        }
+
+        /* Main heading */
+        header {
+            background: linear-gradient(110deg, #075638, #116b49);
+            color: white;
+            text-align: center;
+            padding: 18px 10px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin: 0 0 8px;
+        }
+
+        header p {
+            font-size: 22px;
+            font-style: italic;
+            margin: 0;
+        }
+
+        /* Table styling */
+        .table-wrapper {
+            overflow-x: auto;
+            border: 2px solid #185d45;
+            border-radius: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            min-width: 850px;
+        }
+
+        th, td {
+            border: 1px solid #9abca6;
+            padding: 14px 12px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        thead th {
+            background-color: #086343;
+            color: white;
+            font-weight: bold;
+        }
+
+        thead .subheading {
+            background-color: #bfe8ad;
+            color: #14532d;
+        }
+
+        .number {
+            width: 7%;
+            font-weight: bold;
+        }
+
+        .category {
+            width: 17%;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .product-name {
+            text-align: left;
+            width: 16%;
+        }
+
+        .description {
+            text-align: left;
+            width: 22%;
+        }
+
+        .unit {
+            width: 12%;
+        }
+
+        .price {
+            width: 15%;
+        }
+
+        .stock {
+            width: 13%;
+        }
+
+        /* Category colors */
+        .seeds {
+            background-color: #e1f7a9;
+            color: #17552d;
+        }
+
+        .fertilizers {
+            background-color: #c5e5ff;
+            color: #104e84;
+        }
+
+        .tools {
+            background-color: #ffe0ad;
+            color: #81400b;
+        }
+
+        .seeds-row td:not(.category) {
+            background-color: #eff9e4;
+        }
+
+        .fertilizers-row td:not(.category) {
+            background-color: #e5f3ff;
+        }
+
+        .tools-row td:not(.category) {
+            background-color: #fff2dc;
+        }
+
+        .category-icon {
+            display: block;
+            font-size: 54px;
+            margin-bottom: 8px;
+        }
+
+        /* Stock status labels */
+        .status {
+            display: inline-block;
+            padding: 10px 14px;
+            color: white;
+            border-radius: 8px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .in-stock {
+            background-color: #399c46;
+        }
+
+        .low-stock {
+            background-color: #ffab00;
+        }
+
+        .out-stock {
+            background-color: #e53935;
+        }
+
+        /* Bottom summary row */
+        tfoot td {
+            background-color: #e4d0ff;
+            color: #35136d;
+            font-weight: bold;
+            font-size: 23px;
+            padding: 20px 10px;
+        }
+
+        .tagline {
+            font-size: 18px;
+            font-style: italic;
+            font-weight: normal;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 8px;
+            }
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            th, td {
+                padding: 10px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>🌱 Farm Supplies</h1>
+        <p>Quality Supplies for a Productive Farm</p>
+    </header>
+
+    <div class="table-wrapper">
+        <table>
+
+            <thead>
+                <tr>
+                    <th rowspan="2">No.</th>
+                    <th rowspan="2">Category</th>
+                    <th colspan="3">Product Details</th>
+                    <th rowspan="2">Unit Price<br>(KSh)</th>
+                    <th rowspan="2">Stock<br>Status</th>
+                </tr>
+
+                <tr>
+                    <th class="subheading">Product Name</th>
+                    <th class="subheading">Description</th>
+                    <th class="subheading">Unit</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <!-- Seeds category -->
+                <tr class="seeds-row">
+                    <td class="number">1</td>
+                    <td class="category seeds" rowspan="3">
+                        <span class="category-icon">🌱</span>
+                        Seeds
+                    </td>
+                    <td class="product-name">Maize Seeds</td>
+                    <td class="description">High-yield hybrid maize seeds</td>
+                    <td class="unit">50 kg bag</td>
+                    <td>2,500</td>
+                    <td><span class="status in-stock">In Stock</span></td>
+                </tr>
+
+                <tr class="seeds-row">
+                    <td class="number">2</td>
+                    <td class="product-name">Bean Seeds</td>
+                    <td class="description">High quality bean seeds</td>
+                    <td class="unit">10 kg bag</td>
+                    <td>1,800</td>
+                    <td><span class="status in-stock">In Stock</span></td>
+                </tr>
+
+                <tr class="seeds-row">
+                    <td class="number">3</td>
+                    <td class="product-name">Vegetable Seeds</td>
+                    <td class="description">Assorted vegetable seeds</td>
+                    <td class="unit">pack</td>
+                    <td>500</td>
+                    <td><span class="status low-stock">Low Stock</span></td>
+                </tr>
+
+                <!-- Fertilizers category -->
+                <tr class="fertilizers-row">
+                    <td class="number">4</td>
+                    <td class="category fertilizers" rowspan="3">
+                        <span class="category-icon">🧺</span>
+                        Fertilizers
+                    </td>
+                    <td class="product-name">NPK Fertilizer</td>
+                    <td class="description">Balanced nutrient formula</td>
+                    <td class="unit">50 kg bag</td>
+                    <td>3,000</td>
+                    <td><span class="status in-stock">In Stock</span></td>
+                </tr>
+
+                <tr class="fertilizers-row">
+                    <td class="number">5</td>
+                    <td class="product-name">Urea</td>
+                    <td class="description">Nitrogen-rich fertilizer</td>
+                    <td class="unit">50 kg bag</td>
+                    <td>2,200</td>
+                    <td><span class="status in-stock">In Stock</span></td>
+                </tr>
+
+                <tr class="fertilizers-row">
+                    <td class="number">6</td>
+                    <td class="product-name">DAP</td>
+                    <td class="description">Phosphorus-rich fertilizer</td>
+                    <td class="unit">50 kg bag</td>
+                    <td>3,500</td>
+                    <td><span class="status out-stock">Out of Stock</span></td>
+                </tr>
+
+                <!-- Tools category -->
+                <tr class="tools-row">
+                    <td class="number">7</td>
+                    <td class="category tools" rowspan="3">
+                        <span class="category-icon">🛠️</span>
+                        Tools
+                    </td>
+                    <td class="product-name">Hoe</td>
+                    <td class="description">Traditional farming hoe</td>
+                    <td class="unit">piece</td>
+                    <td>800</td>
+                    <td><span class="status in-stock">In Stock</span></td>
+                </tr>
+
+                <tr class="tools-row">
+                    <td class="number">8</td>
+                    <td class="product-name">Watering Can</td>
+                    <td class="description">Plastic watering can (10L)</td>
+                    <td class="unit">piece</td>
+                    <td>1,200</td>
+                    <td><span class="status in-stock">In Stock</span></td>
+                </tr>
+
+                <tr class="tools-row">
+                    <td class="number">9</td>
+                    <td class="product-name">Wheelbarrow</td>
+                    <td class="description">Heavy duty wheelbarrow</td>
+                    <td class="unit">piece</td>
+                    <td>5,500</td>
+                    <td><span class="status low-stock">Low Stock</span></td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td colspan="3">Total Items</td>
+                    <td colspan="2">9</td>
+                    <td colspan="2" class="tagline">
+                         Better Supplies, Bigger Harvests!
+                    </td>
+                </tr>
+            </tfoot>
+
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>
